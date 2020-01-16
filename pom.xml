@@ -11,31 +11,23 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <selenium.version>3.141.59</selenium.version>
-        <freemaker.version>2.3.29</freemaker.version>
-        <jackson.version>2.9.8</jackson.version>
-        <apachecommons.version>1.6</apachecommons.version>
-        <slf4j.version>1.8.0-beta2</slf4j.version>
+        <slf4j.version>2.0.0-alpha1</slf4j.version>
         <junit.version>5.4.0</junit.version>
         <mockito.verion>3.2.4</mockito.verion>
         <webdrivermanager.version>3.2.0</webdrivermanager.version>
-        <mavenshadeplugin.version>3.2.1</mavenshadeplugin.version>
-        <nexusstagingplugin.version>1.6.7</nexusstagingplugin.version>
-        <gpgplugin.version>1.5</gpgplugin.version>
-        <javadocplugin.version>2.9.1</javadocplugin.version>
-        <mavensourceplugin.version>2.2.1</mavensourceplugin.version>
+        <java.a11y.version>2.0-alpha-2</java.a11y.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>io.github.sridharbandi</groupId>
             <artifactId>java-a11y</artifactId>
-            <version>2.0-alpha-2</version>
+            <version>${java.a11y.version}</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
-            <version>2.0.0-alpha1</version>
+            <version>${slf4j.version}</version>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -66,7 +58,6 @@
             <artifactId>webdrivermanager</artifactId>
             <version>${webdrivermanager.version}</version>
         </dependency>
-
     </dependencies>
 
 </project>
