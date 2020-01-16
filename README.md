@@ -1,6 +1,7 @@
 This is an example project to demonstrate how to use Accessibility Automation library [https://github.com/sridharbandi/Java-a11y](https://github.com/sridharbandi/Java-a11y)
 
 ###How to run?
+
 Clone or download the project and run the below command
 ```
 mvn test
