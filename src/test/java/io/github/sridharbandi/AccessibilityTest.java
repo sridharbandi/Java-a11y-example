@@ -50,7 +50,7 @@ public class AccessibilityTest {
         driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
         driver.manage().window().fullscreen();
         accessibilityRunner = new AccessibilityRunner(driver);
-        accessibilityRunner.setStandard(Standard.WCAG2AAA);
+        accessibilityRunner.setStandard(Standard.Section508);
     }
 
     @AfterEach
