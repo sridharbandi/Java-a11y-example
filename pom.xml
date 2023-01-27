@@ -15,7 +15,8 @@
         <junit.version>5.9.1</junit.version>
         <mockito.verion>4.8.1</mockito.verion>
         <webdrivermanager.version>5.3.0</webdrivermanager.version>
-        <java.a11y.version>3.0.1</java.a11y.version>
+        <java.a11y.version>3.0.2</java.a11y.version>
+        <surefire.version>3.0.0-M5</surefire.version>
     </properties>
 
     <dependencies>
@@ -60,4 +61,14 @@
             <version>${webdrivermanager.version}</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${surefire.version}</version>
+            </plugin>
+        </plugins>
+    </build>
 </project>

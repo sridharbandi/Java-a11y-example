@@ -1,7 +1,6 @@
 package io.github.sridharbandi;
 
-import freemarker.template.TemplateException;
-import io.github.bonigarcia.wdm.ChromeDriverManager;
+import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -10,7 +9,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.io.IOException;
-import java.net.URISyntaxException;
 import java.time.Duration;
 
 /**
@@ -32,7 +30,7 @@ public class AxeTest {
     }
 
     @AfterEach
-    public void tearDown() throws TemplateException, IOException, URISyntaxException {
+    public void tearDown() throws IOException {
         axeRunner.execute();
         driver.quit();
     }
