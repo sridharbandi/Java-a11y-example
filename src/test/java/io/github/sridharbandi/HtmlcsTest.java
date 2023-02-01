@@ -49,7 +49,7 @@ public class HtmlcsTest {
     }
 
     @Test
-    public void stockTest() {
+    public void githubTest() {
         driver.get("https://github.com/sridharbandi/Java-a11y/issues/25");
         JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
         String htmlcs = Reader.getInstance().getHTMLCS();
