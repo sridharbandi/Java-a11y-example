@@ -1,13 +1,14 @@
 package io.github.sridharbandi;
 
 import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
-import io.github.sridharbandi.modal.htmlcs.Issues;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -23,6 +24,7 @@ public class HtmlcsTest {
     @BeforeEach
     public void beforeTest() {
         ChromeDriverManager.chromedriver().setup();
+        ChromeOptions options = new ChromeOptions();
         driver = new ChromeDriver();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60));
         driver.manage().window().fullscreen();
@@ -48,6 +50,9 @@ public class HtmlcsTest {
 
     @Test
     public void stockTest() {
-        driver.get("https://www.istockphoto.com/");
+        driver.get("https://github.com/sridharbandi/Java-a11y/issues/25");
+        JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
+        String htmlcs = Reader.getInstance().getHTMLCS();
+        javascriptExecutor.executeScript(htmlcs);
     }
 }
