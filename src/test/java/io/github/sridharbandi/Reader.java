@@ -9,15 +9,21 @@ public class Reader {
     private static Reader instance = null;
 
     private String htmlcs;
+    private String axe;
 
     private Reader(){
         ClassLoader cl = this.getClass().getClassLoader();
-        InputStream in = cl.getResourceAsStream("build/HTMLCS.js");
+        InputStream inhtmlcs = cl.getResourceAsStream("build/HTMLCS.js");
+        InputStream inaxe = cl.getResourceAsStream("build/AXE.js");
         try {
-            if (in == null) {
+            if (inhtmlcs == null) {
                 throw new IOException("InputStream failed for build/HTMLCS.js");
             }
-            htmlcs = IOUtils.toString(in, "UTF-8");
+            if (inaxe == null) {
+                throw new IOException("InputStream failed for build/AXE.js");
+            }
+            htmlcs = IOUtils.toString(inhtmlcs, "UTF-8");
+            axe = IOUtils.toString(inaxe, "UTF-8");
         } catch ( IOException e) {
             e.printStackTrace();
         }
@@ -29,5 +35,9 @@ public class Reader {
 
     public String getHTMLCS(){
         return htmlcs;
+    }
+
+    public String getAXE(){
+        return axe;
     }
 }

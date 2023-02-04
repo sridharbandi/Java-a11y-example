@@ -5,6 +5,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -46,8 +47,11 @@ public class AxeTest {
     }
 
     @Test
-    public void stockTest() {
-        driver.get("https://www.istockphoto.com/");
+    public void gitHubTest() {
+        driver.get("https://github.com/sridharbandi/Java-a11y/issues/25");
+        JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
+        String axe = Reader.getInstance().getAXE();
+        javascriptExecutor.executeScript(axe);
     }
 
 }
